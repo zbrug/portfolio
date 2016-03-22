@@ -1,0 +1,64 @@
+@mixin dimension($diameter) {
+  margin: -($diameter / 2) 0 0 0-($diameter / 2);
+  height: $diameter;
+  width: $diameter;
+}
+
+///
+
+html,
+body {
+  
+}
+
+body {
+  padding: 50px 0; 
+}
+
+.axis {
+
+}
+
+.planet {
+  background-size: contain;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+#background {
+  background-image: url('/assets/img/grid.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%; width: 100%;
+}
+
+.image-effect {position: relative; height: 400px; display: inline-block; }
+
+#x-axis {
+  bottom: -50%;
+  left: 50%;
+  top: -50%;
+  width: 1px;
+}
+
+#y-axis {
+  left: 0;
+  top: 50%;
+  right: 0;
+  height: 1px;
+}
+
+#planet-1 {
+  @include dimension(300px);
+  background-image: url('/assets/img/hosted/mobile_oly_medals_wf.png');
+  z-index: 20;
+}
+
+#planet-2 {
+  @include dimension(300px);
+  background-image: url('/assets/img/hosted/mobile_oly_medals.png');
+  z-index: 10;
+}
