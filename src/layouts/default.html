@@ -7,14 +7,49 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foundation for Sitesaasd</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
     <link rel="stylesheet" href="{{root}}assets/css/custom.css">
+    
+	<!-- SEO Ultimate (http://www.seodesignsolutions.com/wordpress-seo/) -->
+	<meta name="description" content="Online portfolio" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Portfolio" />
+	<meta property="og:description" content="Online portfolio" />
+	<meta property="og:url" content="http://www.zachbrugman.com/" />
+	<meta property="article:published_time" content="2016-04-10" />
+	<meta property="article:modified_time" content="2016-04-10" />
+	<meta property="og:site_name" content="Zach Brugman" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:creator" content="@zbrug" />
+	<meta name="twitter:site" content="@zbrug" />
+	<!-- /SEO Ultimate -->
+    <script>
+    jQuery(document).ready(function($) {  
+		// site preloader -- also uncomment the div in the header and the css style for #preloader
+		$(window).load(function(){
+			$('#preloader').fadeOut('slow',function(){$(this).remove();});
+		});
+
+		});
+    </script>
+    
   </head>
-  <body>
+  <body class="">
+  	<div id="preloader"></div>
 	{{> navigation}}
     {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
     {{> body}}
-
+	
+	{{> footer}}
+	
     <script src="{{root}}assets/js/app.js"></script>
+    <script>
+		$(window).bind("load", function() {
+		   $('div#preloader').fadeOut('slow',function(){$(this).remove();});
+		   $('body').addClass('stack-load');
+		});
+    </script>
+    
   </body>
 </html>
